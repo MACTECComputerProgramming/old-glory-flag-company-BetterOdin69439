@@ -1,7 +1,13 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Old_Glory.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<Old_GloryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Old_GloryContext")));
 
 var app = builder.Build();
 
