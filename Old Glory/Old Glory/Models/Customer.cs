@@ -2,6 +2,8 @@
 {
     public class Customer
     {
+        internal readonly object Title;
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

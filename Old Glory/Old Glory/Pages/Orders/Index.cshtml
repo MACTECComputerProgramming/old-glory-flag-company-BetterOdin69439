@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Orders</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -16,6 +16,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].Description)
             </th>
+            <form asp-controller="Orders" asp-action="Index">
+    <p>
+        Orders: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].Size)
             </th>

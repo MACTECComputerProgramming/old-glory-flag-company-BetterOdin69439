@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Products</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -19,6 +19,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Product[0].Amount)
             </th>
+              <form asp-controller="Products" asp-action="Index">
+    <p>
+        Products: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
             <th>
                 @Html.DisplayNameFor(model => model.Product[0].Price)
             </th>
